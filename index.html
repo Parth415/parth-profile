@@ -400,23 +400,83 @@
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge ai">✦ GenAI</span><span class="badge live">● Live</span></div>
-        <h3>Migratrix — AI SQL Migration Assistant</h3>
-        <div class="role grad-text">Creator &amp; Sole Developer</div>
+        <div class="top"><span class="badge build">◆ Optimization</span><span class="badge live">● Live</span></div>
+        <h3>SHRED — Smart Hub Replenishment End Date</h3>
+        <div class="role grad-text">Analyst &amp; Developer</div>
         <p>
-          A conversational GenAI assistant (Amazon Bedrock + Claude) delivered as a
-          chat slash-command. Users paste a legacy SQL query or ask in plain English,
-          and it returns the migrated query with a diff-style change summary. Built a
-          serverless async pattern to beat the platform's 3-second response limit, and
-          embedded a multi-domain knowledge base in place of a heavier RAG stack.
-          Adopted across multiple teams, running for under $1/month.
+          Redesigned the replenishment blocking logic for grocery distribution. The
+          legacy system used a fixed 41-day cutoff that over-blocked fast movers
+          (hurting in-stock rates) and under-blocked slow movers (causing overstock
+          and shrink). Built a velocity-aware model using shelf life and target
+          inventory position against actual future orders — blocking only when
+          sell-through is impossible, preserving availability for high-velocity items.
         </p>
         <div class="stack">
-          <span class="tag">Amazon Bedrock</span>
-          <span class="tag">Claude</span>
-          <span class="tag">LLM / GenAI</span>
-          <span class="tag">AWS Lambda</span>
-          <span class="tag">Python</span>
+          <span class="tag">Replenishment Logic</span>
+          <span class="tag">SQL / ETL</span>
+          <span class="tag">Demand Modeling</span>
+          <span class="tag">Shrink Reduction</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="top"><span class="badge build">◆ Automation</span><span class="badge live">150+ hrs saved/yr</span></div>
+        <h3>Assigned-but-Empty ETL Pipeline</h3>
+        <div class="role grad-text">Developer &amp; Owner</div>
+        <p>
+          Replaced a 3–4 hour weekly manual reporting process with an automated ETL
+          pipeline that identifies ASINs assigned to distribution centers but sitting
+          empty — a key driver of scarcity and instock metrics. Unified multiple data
+          sources (inventory health, NVO, removals) into a single automated output,
+          giving business owners one source of truth. Reduced the ABE metric from
+          double digits to 4% in 8 weeks.
+        </p>
+        <div class="stack">
+          <span class="tag">ETL Pipeline</span>
+          <span class="tag">S3</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Process Automation</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">$2.3M potential savings</span></div>
+        <h3>Inner Pack Eligibility Engine</h3>
+        <div class="role grad-text">Developer &amp; Analyst</div>
+        <p>
+          Built a logic-based eligibility tool for a VP-level initiative to implement
+          inner pack distribution in grocery DCs. The engine validates ASINs against
+          multiple constraints — hazmat status, dimensional limits, weight, temperature
+          zone, flow rack compatibility, and POG status — to identify which of ~2,000
+          products can shift to inner pack stowing ($0.20/unit VCPU savings across
+          225K weekly units). Delivered a dashboard for operations teams to investigate
+          eligibility defects.
+        </p>
+        <div class="stack">
+          <span class="tag">Business Logic</span>
+          <span class="tag">Dashboard</span>
+          <span class="tag">Supply Chain Optimization</span>
+          <span class="tag">SQL</span>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">● Live</span></div>
+        <h3>Vendor Failed Minimums Dashboard</h3>
+        <div class="role grad-text">Lead Developer</div>
+        <p>
+          Created a unified analytics dashboard consolidating vendor minimum order
+          data from two fragmented systems into a single source of truth. Features
+          12-week trend analysis, impact breakdowns by DC and temperature zone, and
+          filtering by vendor, ASIN, and out-of-stock status. Became a critical tool
+          for vendor onboarding, proactive minimum reviews, and reducing failed
+          purchase orders.
+        </p>
+        <div class="stack">
+          <span class="tag">BI Dashboard</span>
+          <span class="tag">Data Integration</span>
+          <span class="tag">Vendor Analytics</span>
+          <span class="tag">SQL / ETL</span>
         </div>
       </article>
 
@@ -441,24 +501,6 @@
       </article>
 
 
-      <article class="project">
-        <div class="top"><span class="badge build">▲ Architecture</span><span class="badge live">● Live</span></div>
-        <h3>Redshift Cluster Scaling &amp; Load Balancing</h3>
-        <div class="role grad-text">Analyst &amp; Co-Designer</div>
-        <p>
-          Helped redesign a single overloaded analytics warehouse (3.7K users, ~1.3M
-          queries/week) into function-based clusters with data sharing and load
-          balancing. Ran query-performance audits, identified concurrency and
-          "bucket-effect" bottlenecks, and shaped a producer / analytics / load-balancer
-          architecture to improve throughput, cost, and compliance.
-        </p>
-        <div class="stack">
-          <span class="tag">Amazon Redshift</span>
-          <span class="tag">Data Engineering</span>
-          <span class="tag">Performance Tuning</span>
-          <span class="tag">Architecture</span>
-        </div>
-      </article>
 
       <article class="project">
         <div class="top"><span class="badge ai">✦ ML-Ready</span><span class="badge build">▲ In Design</span></div>
@@ -479,22 +521,6 @@
         </div>
       </article>
 
-      <article class="project">
-        <div class="top"><span class="badge ai">✦ Automation</span><span class="badge build">▲ In Progress</span></div>
-        <h3>Automated Business Review Intelligence</h3>
-        <div class="role grad-text">Builder</div>
-        <p>
-          Tooling that automates the weekly business review — programmatically
-          pulling data from collaboration tools, assembling the metrics that matter,
-          and removing hours of manual slide and report preparation each cycle.
-        </p>
-        <div class="stack">
-          <span class="tag">Python</span>
-          <span class="tag">API Integration</span>
-          <span class="tag">Data Modeling</span>
-          <span class="tag">Reporting Automation</span>
-        </div>
-      </article>
 
     </div>
 
