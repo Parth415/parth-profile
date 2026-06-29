@@ -3,200 +3,143 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Parth Prajapati — AI &amp; Data-Driven Analytics Engineer</title>
-<meta name="description" content="Parth Prajapati — Analytics Engineer building AI-driven automation, intelligent monitoring agents, and data tools for large-scale supply chain operations." />
+<title>Parth Prajapati — Analytics Engineer</title>
+<meta name="description" content="Parth Prajapati — Analytics Engineer building AI-driven automation and data tools for large-scale supply chain operations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --bg: #0a0e17;
-    --bg-soft: #121826;
-    --card: #161d2e;
-    --card-hover: #1e2740;
-    --border: #263149;
-    --text: #e8eef7;
-    --muted: #94a3b8;
-    --accent: #7c5cff;
-    --accent-2: #22d3ee;
-    --accent-soft: rgba(124, 92, 255, 0.14);
-    --green: #34d399;
-    --radius: 16px;
-    --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
-    --grad: linear-gradient(120deg, #7c5cff 0%, #22d3ee 100%);
+    --bg: #ffffff;
+    --surface: #f8f9fa;
+    --border: #eaeaea;
+    --text: #111111;
+    --muted: #555555;
+    --accent: #111111;
+    --accent-hover: #333333;
+    --radius: 6px;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: var(--font);
     background: var(--bg);
     color: var(--text);
-    line-height: 1.65;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
   }
   a { color: inherit; text-decoration: none; }
-  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
-  .grad-text {
-    background: var(--grad);
-    -webkit-background-clip: text; background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
   /* Nav */
   nav {
     position: sticky; top: 0; z-index: 50;
+    background: rgba(255, 255, 255, 0.88);
     backdrop-filter: blur(12px);
-    background: rgba(10, 14, 23, 0.78);
     border-bottom: 1px solid var(--border);
   }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-  nav .brand { font-weight: 700; letter-spacing: 0.5px; display: flex; align-items: center; gap: 9px; }
-  nav .brand .logo {
-    width: 26px; height: 26px; border-radius: 7px; background: var(--grad);
-    display: grid; place-items: center; font-size: 13px; color: #fff; font-weight: 800;
-  }
-  nav ul { display: flex; gap: 26px; list-style: none; }
-  nav ul a { color: var(--muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 52px; }
+  nav .brand { font-weight: 600; font-size: 14px; letter-spacing: -0.2px; }
+  nav ul { display: flex; gap: 28px; list-style: none; }
+  nav ul a { color: var(--muted); font-size: 13px; font-weight: 500; transition: color 0.15s; }
   nav ul a:hover { color: var(--text); }
 
   /* Hero */
-  header.hero {
-    position: relative;
-    padding: 104px 0 78px;
-    background:
-      radial-gradient(820px 380px at 78% -8%, var(--accent-soft), transparent),
-      radial-gradient(680px 340px at 2% 8%, rgba(34,211,238,0.10), transparent);
+  header.hero { padding: 72px 0 56px; }
+  .hero-grid { display: flex; align-items: center; gap: 32px; }
+  .hero-photo {
+    width: 96px; height: 96px; border-radius: 50%; overflow: hidden; flex-shrink: 0;
   }
-  .hero-grid { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
-  .chip {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12.5px; letter-spacing: 1.5px; text-transform: uppercase;
-    color: var(--text); font-weight: 600; margin-bottom: 20px;
-    padding: 7px 14px; border-radius: 999px;
-    border: 1px solid var(--border); background: var(--bg-soft);
-  }
-  .chip .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent-2); box-shadow: 0 0 0 0 rgba(34,211,238,0.6); animation: pulse 2s infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,211,238,0.6);} 70% { box-shadow: 0 0 0 9px rgba(34,211,238,0);} 100% { box-shadow: 0 0 0 0 rgba(34,211,238,0);} }
-  .hero h1 { font-size: 54px; line-height: 1.08; font-weight: 800; margin-bottom: 20px; letter-spacing: -1px; }
-  .hero p.lead { font-size: 19px; color: var(--muted); max-width: 640px; margin-bottom: 28px; }
-  .hero .meta { display: flex; flex-wrap: wrap; gap: 10px 22px; color: var(--muted); font-size: 14px; margin-bottom: 32px; }
-  .hero .meta span { display: inline-flex; align-items: center; gap: 7px; }
-  .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 13px 24px; border-radius: 11px; font-weight: 600; font-size: 15px;
-    transition: transform 0.15s, box-shadow 0.2s, border-color 0.2s, background 0.2s;
-  }
-  .btn-primary { background: var(--grad); color: #fff; box-shadow: 0 6px 20px rgba(124,92,255,0.35); }
-  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(124,92,255,0.45); }
-  .btn-ghost { border: 1px solid var(--border); color: var(--text); }
-  .btn-ghost:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .hero h1 { font-size: 28px; font-weight: 700; line-height: 1.2; margin-bottom: 8px; letter-spacing: -0.5px; }
+  .hero p.lead { font-size: 15px; color: var(--muted); max-width: 520px; margin-bottom: 16px; line-height: 1.55; }
+  .hero .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 13px; }
+  .hero .meta a { color: var(--text); font-weight: 500; }
+  .hero .meta a:hover { text-decoration: underline; }
 
-  .orb {
-    width: 188px; height: 188px; border-radius: 50%;
-    background: var(--grad);
-    display: grid; place-items: center;
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-  }
-  .orb img {
-    width: 100%; height: 100%; object-fit: cover;
-  }
-  .orb::after {
-    content: ""; position: absolute; inset: -10px; border-radius: 50%;
-    border: 1px dashed rgba(124,92,255,0.4); animation: spin 18s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Stats strip */
-  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 56px; }
-  .stat { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; text-align: center; }
-  .stat .n { font-size: 30px; font-weight: 800; }
-  .stat .l { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  /* Stats */
+  .stats { display: flex; gap: 0; margin-top: 48px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .stat { flex: 1; padding: 18px 16px; text-align: center; border-right: 1px solid var(--border); }
+  .stat:last-child { border-right: none; }
+  .stat .n { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; letter-spacing: 0.2px; }
 
   /* Sections */
-  section { padding: 70px 0; border-top: 1px solid var(--border); }
-  .section-head { margin-bottom: 40px; }
-  .section-head .num { font-weight: 700; font-size: 14px; letter-spacing: 1px; }
-  .section-head h2 { font-size: 32px; font-weight: 800; margin-top: 4px; letter-spacing: -0.5px; }
-  .section-head p { color: var(--muted); margin-top: 8px; max-width: 700px; }
+  section { padding: 52px 0; border-top: 1px solid var(--border); }
+  .section-head { margin-bottom: 28px; }
+  .section-head h2 { font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+  .section-head p { color: var(--muted); margin-top: 4px; font-size: 14px; }
 
   /* About */
-  .about-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 38px; }
-  .about-grid p { color: var(--muted); margin-bottom: 16px; }
-  .about-grid p strong { color: var(--text); }
-  .facts { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; }
-  .facts h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; }
-  .facts dl { display: grid; grid-template-columns: auto 1fr; gap: 11px 14px; font-size: 14px; }
+  .about-content { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+  .about-content p { color: var(--muted); margin-bottom: 12px; font-size: 14px; line-height: 1.65; }
+  .about-content p strong { color: var(--text); font-weight: 600; }
+  .facts { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; }
+  .facts h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--muted); margin-bottom: 14px; font-weight: 600; }
+  .facts dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; font-size: 13px; }
   .facts dt { color: var(--muted); }
-  .facts dd { color: var(--text); text-align: right; }
+  .facts dd { text-align: right; font-weight: 500; }
 
   /* Skills */
-  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 18px; }
-  .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: border-color .2s, transform .18s; }
-  .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-  .skill-card h3 { font-size: 16px; margin-bottom: 15px; display: flex; align-items: center; gap: 9px; }
-  .skill-card h3 .ico { font-size: 17px; }
-  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .tag { font-size: 13px; padding: 5px 11px; border-radius: 999px; background: var(--bg-soft); border: 1px solid var(--border); color: var(--muted); }
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+  .skill-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 18px; }
+  .skill-card h3 { font-size: 12px; font-weight: 600; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); }
+  .tags { display: flex; flex-wrap: wrap; gap: 5px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 3px; background: var(--bg); border: 1px solid var(--border); color: var(--text); font-weight: 400; }
 
   /* Company grouping */
-  .company-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 20px; }
-  .company-name { font-size: 21px; font-weight: 800; display: inline-flex; align-items: center; gap: 10px; }
-  .company-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--grad); }
-  .company-dot.staples { background: #cc0000; }
-  .company-meta { font-size: 13.5px; color: var(--muted); }
+  .company-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+  .company-name { font-size: 15px; font-weight: 700; letter-spacing: -0.2px; }
+  .company-meta { font-size: 12px; color: var(--muted); }
 
   /* Projects */
-  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .project.placeholder { border-style: dashed; opacity: 0.85; }
-  .project.placeholder:hover { transform: none; border-color: var(--accent); }
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 36px; }
   .project {
-    position: relative; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 28px; display: flex; flex-direction: column; overflow: hidden;
-    transition: transform 0.18s, border-color 0.2s, background 0.2s;
+    background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; display: flex; flex-direction: column;
+    transition: border-color 0.15s, box-shadow 0.15s;
   }
-  .project::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-    background: var(--grad); opacity: 0; transition: opacity .2s;
-  }
-  .project:hover { transform: translateY(-5px); border-color: var(--accent); background: var(--card-hover); }
-  .project:hover::before { opacity: 1; }
-  .project .top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; }
-  .project .badge { font-size: 11px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; }
-  .badge.live { background: rgba(52,211,153,0.15); color: var(--green); }
-  .badge.ai { background: var(--accent-soft); color: #b8a6ff; }
-  .badge.build { background: rgba(34,211,238,0.15); color: var(--accent-2); }
-  .project h3 { font-size: 20px; margin-bottom: 6px; }
-  .project .role { font-size: 13px; margin-bottom: 13px; font-weight: 600; }
-  .project p { color: var(--muted); font-size: 14.5px; margin-bottom: 18px; flex-grow: 1; }
-  .project .stack { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
-  .project .stack .tag { font-size: 12px; }
+  .project:hover { border-color: #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .project .top { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; }
+  .project .badge { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; padding: 2px 7px; border-radius: 3px; }
+  .badge.live { background: #ecfdf5; color: #047857; }
+  .badge.ai { background: #eef2ff; color: #4338ca; }
+  .badge.build { background: #f5f5f5; color: #444; }
+  .project h3 { font-size: 14px; font-weight: 600; margin-bottom: 6px; letter-spacing: -0.2px; }
+  .project .role { font-size: 11px; color: var(--muted); font-weight: 500; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.3px; }
+  .project p { color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px; flex-grow: 1; }
+  .project .stack { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+  .project .stack .tag { font-size: 11px; padding: 2px 7px; }
 
   /* Contact */
   .contact-card {
-    background: linear-gradient(145deg, var(--card), var(--bg-soft));
-    border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 48px; text-align: center; position: relative; overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 36px; text-align: center;
   }
-  .contact-card::before {
-    content: ""; position: absolute; inset: 0;
-    background: radial-gradient(500px 200px at 50% 0%, var(--accent-soft), transparent);
+  .contact-card h2 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .contact-card p { color: var(--muted); margin-bottom: 20px; font-size: 14px; }
+  .contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 9px 18px; border-radius: 5px; font-weight: 500; font-size: 13px;
+    transition: background 0.15s, border-color 0.15s;
   }
-  .contact-card > * { position: relative; }
-  .contact-card h2 { font-size: 30px; margin-bottom: 10px; }
-  .contact-card p { color: var(--muted); margin-bottom: 28px; }
-  .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: #999; }
 
-  footer { padding: 38px 0; text-align: center; color: var(--muted); font-size: 13px; border-top: 1px solid var(--border); }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); }
 
-  @media (max-width: 820px) {
-    .hero h1 { font-size: 40px; }
-    .hero-grid { grid-template-columns: 1fr; }
-    .orb { display: none; }
-    .stats { grid-template-columns: repeat(2, 1fr); }
-
-    .about-grid { grid-template-columns: 1fr; }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 24px; }
+    .hero-grid { flex-direction: column; align-items: flex-start; gap: 16px; }
+    .stats { flex-wrap: wrap; }
+    .stat { flex: 1 1 45%; border-bottom: 1px solid var(--border); }
+    .about-content { grid-template-columns: 1fr; }
     .projects { grid-template-columns: 1fr; }
     nav ul { display: none; }
   }
@@ -206,7 +149,7 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span class="logo">PP</span> Parth Prajapati</div>
+    <div class="brand">Parth Prajapati</div>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -219,33 +162,28 @@
 <header class="hero">
   <div class="wrap">
     <div class="hero-grid">
+      <div class="hero-photo"><img src="profile.jpeg" alt="Parth Prajapati" /></div>
       <div>
-        <span class="chip"><span class="pulse"></span> AI &amp; Automation · Supply Chain Analytics · Product Analytics · Operations Research</span>
-        <h1>I build <span class="grad-text">AI-driven systems</span> that turn supply chain data into action.</h1>
+        <h1>Parth Prajapati</h1>
         <p class="lead">
-          Analytics Engineer and builder specializing in intelligent automation —
-          autonomous monitoring agents, anomaly detection, and decision-support
-          tools that operate at enterprise scale. I take ideas from raw data and
-          ETL pipelines all the way to deployed, AI-powered products.
+          Analytics engineer building AI-driven automation, intelligent monitoring,
+          and decision-support tools for large-scale supply chain operations.
         </p>
         <div class="meta">
-          <span>🤖 Autonomous agents &amp; intelligent automation</span>
-          <span>📊 Data &amp; analytics engineering</span>
-          <span>📍 New York, NY</span>
-        </div>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#projects">Explore my work →</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          <span>New York, NY</span>
+          <span>&middot;</span>
+          <a href="mailto:Parth45730@gmail.com">Parth45730@gmail.com</a>
+          <span>&middot;</span>
+          <a href="https://www.linkedin.com/in/prajapati415" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
-      <div class="orb"><img src="profile.jpeg" alt="Parth Prajapati" /></div>
     </div>
 
     <div class="stats">
-      <div class="stat"><div class="n grad-text">14+</div><div class="l">Projects shipped</div></div>
-      <div class="stat"><div class="n grad-text">$4M+</div><div class="l">Cost savings identified</div></div>
-      <div class="stat"><div class="n grad-text">2</div><div class="l">Fortune 500 employers</div></div>
-      <div class="stat"><div class="n grad-text">5+</div><div class="l">Years of experience</div></div>
+      <div class="stat"><div class="n">14+</div><div class="l">Projects shipped</div></div>
+      <div class="stat"><div class="n">$4M+</div><div class="l">Cost savings identified</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Fortune 500 employers</div></div>
+      <div class="stat"><div class="n">5+</div><div class="l">Years of experience</div></div>
     </div>
   </div>
 </header>
@@ -254,45 +192,37 @@
 
   <section id="about">
     <div class="section-head">
-      <span class="num grad-text">01 —</span>
       <h2>About</h2>
     </div>
-    <div class="about-grid">
+    <div class="about-content">
       <div>
         <p>
-          I'm an <strong>Analytics Engineer and builder with over half a decade of
-          experience</strong> working at the intersection of data, AI, and supply chain
-          for one of the world's largest supply chain networks. I've built and shipped
-          <strong>scalable analytical tools</strong> — systems that don't just report on
-          what happened, but detect anomalies, predict risk, and route the right
-          action to the right owner automatically.
+          I'm an <strong>analytics engineer with over five years of experience</strong>
+          at the intersection of data, AI, and supply chain. I've built and shipped
+          scalable tools that detect anomalies, predict risk, and route action to the
+          right owner automatically.
         </p>
         <p>
-          My work spans the full stack: <strong>SQL and ETL pipelines</strong>,
-          <strong>Python backends, deep analysis, supply chain models, and APIs</strong>,
-          <strong>serverless cloud infrastructure</strong>, and
-          <strong>web front-ends</strong> — increasingly powered by
-          <strong>LLMs and AI agents</strong> that I integrate into
-          real operational workflows.
+          My work spans <strong>SQL and ETL pipelines</strong>, <strong>Python backends
+          and APIs</strong>, <strong>serverless cloud infrastructure</strong>, and
+          <strong>web front-ends</strong> — increasingly powered by LLMs and AI agents
+          integrated into real operational workflows.
         </p>
         <p>
-          I'm at my best turning ambiguous business problems into
-          <strong>automated, measurable systems</strong>: an agent that monitors
-          inventory health every day, a control tower that flags issues in real time,
-          or a cost-to-serve model that uncovers millions in savings. Across two
-          Fortune 500 supply chains (Amazon and Staples), I've shipped 14+ projects
-          and surfaced $4M+ in cost savings.
+          I'm at my best turning ambiguous business problems into automated, measurable
+          systems: an agent that monitors inventory health daily, a control tower that
+          flags issues in real time, or a cost model that uncovers millions in savings.
         </p>
       </div>
       <div class="facts">
-        <h3 class="grad-text">At a glance</h3>
+        <h3>At a glance</h3>
         <dl>
-          <dt>Focus</dt><dd>AI &amp; Automation, Supply Chain, Analytics, Applied AI</dd>
+          <dt>Focus</dt><dd>AI & Automation, Analytics</dd>
           <dt>Domain</dt><dd>Supply Chain</dd>
           <dt>Location</dt><dd>New York, NY</dd>
           <dt>Scale</dt><dd>Enterprise</dd>
           <dt>Shipped</dt><dd>14+ products</dd>
-          <dt>Roles Interested</dt><dd>Forward Deployed Engineer, Analytics Engineer, Data Scientist, Sr/Staff Analyst</dd>
+          <dt>Roles Interested</dt><dd>FDE, Analytics Engineer, Data Scientist, Sr/Staff Analyst</dd>
         </dl>
       </div>
     </div>
@@ -300,24 +230,21 @@
 
   <section id="skills">
     <div class="section-head">
-      <span class="num grad-text">02 —</span>
-      <h2>Skills &amp; Tools</h2>
-      <p>The toolkit I use to take an idea from raw data to a deployed, AI-powered product.</p>
+      <h2>Skills & Tools</h2>
     </div>
     <div class="skill-groups">
       <div class="skill-card">
-        <h3><span class="ico">🤖</span> AI &amp; Automation</h3>
+        <h3>AI & Automation</h3>
         <div class="tags">
           <span class="tag">LLM Integration</span>
           <span class="tag">AI Agents</span>
           <span class="tag">Prompt Engineering</span>
           <span class="tag">Anomaly Detection</span>
-          <span class="tag">Intelligent Alerting</span>
           <span class="tag">Workflow Automation</span>
         </div>
       </div>
       <div class="skill-card">
-        <h3><span class="ico">📊</span> Data &amp; Analytics</h3>
+        <h3>Data & Analytics</h3>
         <div class="tags">
           <span class="tag">SQL</span>
           <span class="tag">ETL Pipelines</span>
@@ -328,17 +255,17 @@
         </div>
       </div>
       <div class="skill-card">
-        <h3><span class="ico">⚙️</span> Engineering</h3>
+        <h3>Engineering</h3>
         <div class="tags">
           <span class="tag">Python</span>
           <span class="tag">FastAPI</span>
           <span class="tag">REST APIs</span>
           <span class="tag">HTML / CSS / JS</span>
-          <span class="tag">SQL &amp; NoSQL</span>
+          <span class="tag">SQL & NoSQL</span>
         </div>
       </div>
       <div class="skill-card">
-        <h3><span class="ico">☁️</span> Cloud &amp; Infra</h3>
+        <h3>Cloud & Infra</h3>
         <div class="tags">
           <span class="tag">AWS Lambda</span>
           <span class="tag">S3</span>
@@ -349,13 +276,13 @@
         </div>
       </div>
       <div class="skill-card">
-        <h3><span class="ico">🏭</span> Domain Expertise</h3>
+        <h3>Domain</h3>
         <div class="tags">
           <span class="tag">Supply Chain Modeling</span>
-          <span class="tag">Replenishment Systems</span>
+          <span class="tag">Replenishment</span>
           <span class="tag">Forecasting</span>
-          <span class="tag">Last Mile / Middle Mile Logistics</span>
-          <span class="tag">Cost-to-Serve Models</span>
+          <span class="tag">Logistics</span>
+          <span class="tag">Cost-to-Serve</span>
           <span class="tag">Customer Analytics</span>
         </div>
       </div>
@@ -364,221 +291,181 @@
 
   <section id="projects">
     <div class="section-head">
-      <span class="num grad-text">03 —</span>
-      <h2>Featured Projects</h2>
-      <p>AI-driven tools and systems I've designed, built, and deployed — organized by where I built them.</p>
+      <h2>Projects</h2>
+      <p>Tools and systems I've designed, built, and deployed.</p>
     </div>
 
-    <!-- ===================== AMAZON ===================== -->
     <div class="company-head">
-      <div class="company-name"><span class="company-dot"></span> Amazon</div>
-      <div class="company-meta">Analytics Engineer · Supply Chain &amp; Operations · 2024–Present</div>
+      <div class="company-name">Amazon</div>
+      <div class="company-meta">Analytics Engineer &middot; 2024&ndash;Present</div>
     </div>
     <div class="projects">
 
       <article class="project">
-        <div class="top"><span class="badge ai">✦ Full-Stack Platform</span><span class="badge live">● Live</span></div>
+        <div class="top"><span class="badge ai">Platform</span><span class="badge live">Live</span></div>
         <h3>Sentinel — Supply Chain Control Tower</h3>
-        <div class="role grad-text">Architect &amp; Sole Developer</div>
+        <div class="role">Architect & Sole Developer</div>
         <p>
-          A full-stack operations platform that centralizes audit monitoring, SLA
-          enforcement, team project tracking, and metrics signal alerting into one
-          real-time dashboard. Continuously ingests data from ETL pipelines, applies
-          threshold logic across distribution centers and temp zones, and pushes
-          intelligent Slack alerts — surfacing issues and routing accountability
-          before they escalate. Deployed on serverless infrastructure with SSO
-          authentication for the team.
+          Full-stack operations platform centralizing audit monitoring, SLA
+          enforcement, and metrics alerting into one real-time dashboard. Ingests
+          data from ETL pipelines, applies threshold logic across DCs, and pushes
+          intelligent Slack alerts before issues escalate.
         </p>
         <div class="stack">
           <span class="tag">FastAPI</span>
           <span class="tag">DynamoDB</span>
-          <span class="tag">AWS Lambda</span>
-          <span class="tag">Real-Time Alerting</span>
-          <span class="tag">Slack Integration</span>
-          <span class="tag">JavaScript</span>
+          <span class="tag">Lambda</span>
+          <span class="tag">Slack</span>
+          <span class="tag">JS</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Optimization</span><span class="badge live">● Live</span></div>
+        <div class="top"><span class="badge build">Optimization</span><span class="badge live">Live</span></div>
         <h3>SHRED — Smart Hub Replenishment End Date</h3>
-        <div class="role grad-text">Analyst &amp; Developer</div>
+        <div class="role">Analyst & Developer</div>
         <p>
-          Redesigned the replenishment blocking logic for grocery distribution. The
-          legacy system used a fixed 41-day cutoff that over-blocked fast movers
-          (hurting in-stock rates) and under-blocked slow movers (causing overstock
-          and shrink). Built a velocity-aware model using shelf life and target
-          inventory position against actual future orders — blocking only when
-          sell-through is impossible, preserving availability for high-velocity items.
+          Redesigned replenishment blocking logic for grocery distribution. Replaced
+          a fixed 41-day cutoff with a velocity-aware model using shelf life and
+          target inventory position — blocking only when sell-through is impossible.
         </p>
         <div class="stack">
-          <span class="tag">Replenishment Logic</span>
+          <span class="tag">Replenishment</span>
           <span class="tag">SQL / ETL</span>
           <span class="tag">Demand Modeling</span>
-          <span class="tag">Shrink Reduction</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Automation</span><span class="badge live">150+ hrs saved/yr</span></div>
+        <div class="top"><span class="badge build">Automation</span><span class="badge live">150+ hrs saved/yr</span></div>
         <h3>Assigned-but-Empty ETL Pipeline</h3>
-        <div class="role grad-text">Developer &amp; Owner</div>
+        <div class="role">Developer & Owner</div>
         <p>
-          Replaced a 3–4 hour weekly manual reporting process with an automated ETL
-          pipeline that identifies ASINs assigned to distribution centers but sitting
-          empty — a key driver of scarcity and instock metrics. Unified multiple data
-          sources (inventory health, NVO, removals) into a single automated output,
-          giving business owners one source of truth. Reduced the ABE metric from
-          double digits to 4% in 8 weeks.
+          Replaced a 3-4 hour weekly manual process with an automated pipeline that
+          identifies ASINs assigned to DCs but sitting empty. Unified multiple data
+          sources into one output. Reduced ABE metric from double digits to 4% in 8 weeks.
         </p>
         <div class="stack">
-          <span class="tag">ETL Pipeline</span>
+          <span class="tag">ETL</span>
           <span class="tag">S3</span>
           <span class="tag">SQL</span>
-          <span class="tag">Process Automation</span>
+          <span class="tag">Automation</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">$2.3M potential savings</span></div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">$2.3M potential</span></div>
         <h3>Inner Pack Eligibility Engine</h3>
-        <div class="role grad-text">Developer &amp; Analyst</div>
+        <div class="role">Developer & Analyst</div>
         <p>
-          Built a logic-based eligibility tool for a VP-level initiative to implement
-          inner pack distribution in grocery DCs. The engine validates ASINs against
-          multiple constraints — hazmat status, dimensional limits, weight, temperature
-          zone, flow rack compatibility, and POG status — to identify which of ~2,000
-          products can shift to inner pack stowing ($0.20/unit VCPU savings across
-          225K weekly units). Delivered a dashboard for operations teams to investigate
-          eligibility defects.
+          Logic-based eligibility tool for a VP-level initiative to implement inner pack
+          distribution. Validates ASINs against hazmat, dimensional, weight, temp zone,
+          and POG constraints. $0.20/unit savings across 225K weekly units.
         </p>
         <div class="stack">
           <span class="tag">Business Logic</span>
           <span class="tag">Dashboard</span>
-          <span class="tag">Supply Chain Optimization</span>
           <span class="tag">SQL</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">● Live</span></div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">Live</span></div>
         <h3>Vendor Failed Minimums Dashboard</h3>
-        <div class="role grad-text">Lead Developer</div>
+        <div class="role">Lead Developer</div>
         <p>
-          Created a unified analytics dashboard consolidating vendor minimum order
-          data from two fragmented systems into a single source of truth. Features
-          12-week trend analysis, impact breakdowns by DC and temperature zone, and
-          filtering by vendor, ASIN, and out-of-stock status. Became a critical tool
-          for vendor onboarding, proactive minimum reviews, and reducing failed
-          purchase orders.
+          Unified vendor minimum order data from two systems into a single source of
+          truth. 12-week trends, impact breakdowns by DC and temp zone, filtering by
+          vendor, ASIN, and OOS status. Critical tool for vendor onboarding and PO health.
         </p>
         <div class="stack">
           <span class="tag">BI Dashboard</span>
           <span class="tag">Data Integration</span>
-          <span class="tag">Vendor Analytics</span>
           <span class="tag">SQL / ETL</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge ai">✦ AI Agent</span><span class="badge live">● Live</span></div>
+        <div class="top"><span class="badge ai">AI Agent</span><span class="badge live">Live</span></div>
         <h3>Autonomous Inventory Health Agent</h3>
-        <div class="role grad-text">Architect &amp; Developer</div>
+        <div class="role">Architect & Developer</div>
         <p>
-          A serverless agent that runs unattended every day — pulling the latest
-          inventory data, running automated health checks across key coverage
-          metrics, detecting threshold breaches and anomalies, and delivering a
-          formatted intelligence report to stakeholders. Fully autonomous,
-          event-driven, and runs for pennies a month.
+          Serverless agent running daily — pulls inventory data, runs health checks
+          across coverage metrics, detects threshold breaches and anomalies, delivers
+          formatted intelligence reports to stakeholders. Fully autonomous, event-driven.
         </p>
         <div class="stack">
           <span class="tag">AI Agent</span>
-          <span class="tag">AWS Lambda</span>
+          <span class="tag">Lambda</span>
           <span class="tag">EventBridge</span>
-          <span class="tag">Anomaly Detection</span>
           <span class="tag">Python</span>
         </div>
       </article>
 
-
-
       <article class="project">
-        <div class="top"><span class="badge ai">✦ ML-Ready</span><span class="badge build">▲ In Design</span></div>
+        <div class="top"><span class="badge ai">ML-Ready</span><span class="badge build">In Design</span></div>
         <h3>Intelligent Shrink Attribution Engine</h3>
-        <div class="role grad-text">Author &amp; Owner</div>
+        <div class="role">Author & Owner</div>
         <p>
-          A redesign of how product loss is categorized and attributed to root
-          causes. Replaces a flat set of technical buckets with an owner-aligned,
-          two-level taxonomy that maps every event to exactly one accountable team —
-          a structured, ML-ready foundation for automated action routing and
-          predictive root-cause analysis.
+          Redesign of how product loss is categorized and attributed to root causes.
+          Owner-aligned two-level taxonomy mapping every event to one accountable
+          team — structured for automated action routing and predictive analysis.
         </p>
         <div class="stack">
-          <span class="tag">Taxonomy Design</span>
+          <span class="tag">Taxonomy</span>
           <span class="tag">SQL / ETL</span>
-          <span class="tag">Automated Routing</span>
-          <span class="tag">Root-Cause Analysis</span>
+          <span class="tag">Root-Cause</span>
         </div>
       </article>
 
-
     </div>
 
-    <!-- ===================== STAPLES ===================== -->
-    <div class="company-head" style="margin-top:46px;">
-      <div class="company-name"><span class="company-dot staples"></span> Staples</div>
-      <div class="company-meta">Supply Chain / Analytics Engineer · B2B Cost-to-Serve &amp; Network Optimization</div>
+    <div class="company-head">
+      <div class="company-name">Staples</div>
+      <div class="company-meta">Supply Chain Analytics &middot; B2B Cost-to-Serve & Network Optimization</div>
     </div>
     <div class="projects">
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Modeling</span><span class="badge live">$2M impact</span></div>
-        <h3>Fulfillment Costing &amp; Channel-Shift Model</h3>
-        <div class="role grad-text">Analyst &amp; Model Builder</div>
+        <div class="top"><span class="badge build">Modeling</span><span class="badge live">$2M impact</span></div>
+        <h3>Fulfillment Costing & Channel-Shift Model</h3>
+        <div class="role">Analyst & Model Builder</div>
         <p>
-          For a business line losing margin while selling through a major marketplace,
-          I reverse-engineered the marketplace's fulfillment rate card (standard,
-          oversize, and low-cost tiers) and built a SKU-level allocation model
-          comparing it to our own delivery and distribution costs. Identified which
-          SKUs were cheaper to ship via the marketplace and recommended a channel-shift
-          strategy worth ~$2M in annual savings.
+          Reverse-engineered a marketplace's fulfillment rate card and built a SKU-level
+          allocation model comparing it to internal delivery costs. Identified which SKUs
+          were cheaper via marketplace and recommended a channel-shift strategy worth ~$2M.
         </p>
         <div class="stack">
           <span class="tag">Cost Modeling</span>
           <span class="tag">Python</span>
-          <span class="tag">SKU Allocation</span>
           <span class="tag">Strategy</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Automation</span><span class="badge live">$500K+ impact</span></div>
-        <h3>Line-Haul Utilization &amp; Mode-Shift Engine</h3>
-        <div class="role grad-text">Analyst &amp; Developer</div>
+        <div class="top"><span class="badge build">Automation</span><span class="badge live">$500K+ impact</span></div>
+        <h3>Line-Haul Utilization & Mode-Shift Engine</h3>
+        <div class="role">Analyst & Developer</div>
         <p>
-          Found middle-mile line-hauls running far below capacity (≈200 of 1,400
-          cartons), inflating per-carton delivery cost ~50% in some lanes. Built a
-          cost-benefit model using live re-rated parcel rates, then wrote a Python
-          script to scan the hub network for the same pattern — surfacing 5+
-          underutilized hubs and $500K+ in annual savings.
+          Found middle-mile line-hauls running below capacity, inflating per-carton cost
+          ~50% in some lanes. Built a cost-benefit model and Python script to scan the
+          hub network — surfacing 5+ underutilized hubs and $500K+ in annual savings.
         </p>
         <div class="stack">
-          <span class="tag">Python Automation</span>
-          <span class="tag">Cost-Benefit Analysis</span>
+          <span class="tag">Python</span>
+          <span class="tag">Cost-Benefit</span>
           <span class="tag">Transportation</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">$1.5M visibility</span></div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">$1.5M visibility</span></div>
         <h3>Restock Savings Tracker</h3>
-        <div class="role grad-text">Analyst &amp; Developer</div>
+        <div class="role">Analyst & Developer</div>
         <p>
-          Built reporting on top of a data-science restock/destock model to quantify
-          the savings unlocked when SKUs are re-stocked closer to demand (avoiding
-          incremental carton expense on order re-routing). Designed the queries and
-          weekly/fiscal views that gave the org visibility into $1.5M+ in annual
-          savings.
+          Reporting on top of a data-science restock/destock model to quantify savings
+          when SKUs are stocked closer to demand. Designed queries and fiscal views
+          giving the org visibility into $1.5M+ in annual savings.
         </p>
         <div class="stack">
           <span class="tag">SQL</span>
@@ -588,51 +475,45 @@
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">$365K impact</span></div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">$365K impact</span></div>
         <h3>Drop-Ship Transformation Analysis</h3>
-        <div class="role grad-text">Analyst</div>
+        <div class="role">Analyst</div>
         <p>
-          Investigated a B2B client whose delivery cost as a % of sales had spiked.
-          Traced it to paper SKUs (40% of sales) that had previously shipped cheaply
-          via vendor drop-ship full-truckload. Built an apples-to-apples cost-to-serve
-          comparison and recommended reverting to drop-ship — $365K in combined
-          delivery and distribution savings.
+          Traced a B2B client's delivery cost spike to paper SKUs that shifted from
+          vendor drop-ship. Built a cost-to-serve comparison and recommended reverting —
+          $365K in combined savings.
         </p>
         <div class="stack">
           <span class="tag">Cost-to-Serve</span>
-          <span class="tag">Root-Cause Analysis</span>
+          <span class="tag">Root-Cause</span>
           <span class="tag">Profitability</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge ai">✦ Algorithm</span><span class="badge live">● Shipped</span></div>
+        <div class="top"><span class="badge ai">Algorithm</span><span class="badge live">Shipped</span></div>
         <h3>Fuzzy Address-Matching Model</h3>
-        <div class="role grad-text">Analyst &amp; Developer</div>
+        <div class="role">Analyst & Developer</div>
         <p>
-          A client's ship-to file wouldn't reconcile against our address records, so
-          standard lookups failed. I applied the Levenshtein edit-distance algorithm to
-          score address similarity — matching ~1,000 of 1,200 locations at &gt;90%
-          confidence and feeding a delivery-feasibility model that traditional VLOOKUP/
-          XLOOKUP couldn't.
+          Applied Levenshtein edit-distance to score address similarity when standard
+          lookups failed — matching ~1,000 of 1,200 locations at >90% confidence for
+          a delivery-feasibility model.
         </p>
         <div class="stack">
-          <span class="tag">Levenshtein Distance</span>
+          <span class="tag">Levenshtein</span>
           <span class="tag">Fuzzy Matching</span>
           <span class="tag">Python</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">● Shipped</span></div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">Shipped</span></div>
         <h3>Cost Data-Quality Investigation</h3>
-        <div class="role grad-text">Analyst</div>
+        <div class="role">Analyst</div>
         <p>
-          A top customer's supply-chain cost appeared to spike 5x. Drilling through a
-          cost-to-serve dashboard and a Python SKU analysis, I isolated it to a single
-          product class and traced the root cause to a unit-of-measure ETL error
-          (pallets counted as cartons). Corrected the model, revealing the customer's
-          true margin was 5%, not the reported 16%.
+          Isolated a 5x cost spike to a single product class and traced it to a
+          unit-of-measure ETL error (pallets counted as cartons). Corrected the model,
+          revealing true margin was 5%, not the reported 16%.
         </p>
         <div class="stack">
           <span class="tag">Data Quality</span>
@@ -642,36 +523,33 @@
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Optimization</span><span class="badge live">$160K impact</span></div>
-        <h3>Inventory Re-Slotting &amp; Network Optimization</h3>
-        <div class="role grad-text">Analyst</div>
+        <div class="top"><span class="badge build">Optimization</span><span class="badge live">$160K impact</span></div>
+        <h3>Inventory Re-Slotting & Network Optimization</h3>
+        <div class="role">Analyst</div>
         <p>
-          For a national banking client, re-slotted a high-volume custom SKU across 10
-          fulfillment centers using months-of-supply scenarios (2 vs 3 MOS). Lifted
-          prime-FC coverage from 40% to 80%, dropped distribution cost from $3.00 to
-          $0.70/carton and delivery 25% — cutting supply-chain cost from 21% to 13% of
-          sales (~$160K/yr).
+          Re-slotted a high-volume SKU across 10 fulfillment centers. Lifted prime-FC
+          coverage from 40% to 80%, dropped distribution cost from $3.00 to $0.70/carton
+          — cutting supply-chain cost from 21% to 13% of sales.
         </p>
         <div class="stack">
-          <span class="tag">Inventory Optimization</span>
+          <span class="tag">Inventory</span>
           <span class="tag">Demand Planning</span>
           <span class="tag">Network Design</span>
         </div>
       </article>
 
       <article class="project">
-        <div class="top"><span class="badge build">◆ Analytics</span><span class="badge live">● Shipped</span></div>
-        <h3>Hidden-Cost &amp; Customer Profitability Audit</h3>
-        <div class="role grad-text">Analyst</div>
+        <div class="top"><span class="badge build">Analytics</span><span class="badge live">Shipped</span></div>
+        <h3>Hidden-Cost & Customer Profitability Audit</h3>
+        <div class="role">Analyst</div>
         <p>
-          When a remote-region customer looked unprofitable, I found air-freight
-          invoices were missing from the finance audit table (a non-preferred carrier).
-          Tied six periods of invoices into a rebuilt cost-to-serve model, showing the
-          true margin was 6% (not 15%) — enough to keep the account rather than drop it.
+          Found air-freight invoices missing from the finance audit table. Rebuilt the
+          cost-to-serve model with six periods of invoices, showing true margin was 6%
+          (not 15%) — keeping the account rather than dropping it.
         </p>
         <div class="stack">
           <span class="tag">Cost-to-Serve</span>
-          <span class="tag">Finance Reconciliation</span>
+          <span class="tag">Reconciliation</span>
           <span class="tag">Profitability</span>
         </div>
       </article>
@@ -681,13 +559,12 @@
 
   <section id="contact">
     <div class="contact-card">
-      <h2>Let's build something <span class="grad-text">intelligent.</span></h2>
-      <p>Open to conversations about AI-driven automation, analytics engineering, and data products.</p>
+      <h2>Get in touch</h2>
+      <p>Open to conversations about analytics engineering, AI automation, and data products.</p>
       <div class="contact-links">
-        <!-- TODO: replace LinkedIn handle before sharing -->
-        <a class="btn btn-primary" href="mailto:Parth45730@gmail.com">✉ Parth45730@gmail.com</a>
-        <a class="btn btn-ghost" href="tel:+18574246009">📞 (857) 424-6009</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/prajapati415" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-primary" href="mailto:Parth45730@gmail.com">Parth45730@gmail.com</a>
+        <a class="btn btn-ghost" href="tel:+18574246009">(857) 424-6009</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/prajapati415" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </section>
@@ -695,24 +572,11 @@
 </main>
 
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Parth Prajapati · Designed &amp; built with plain HTML, CSS &amp; JS
-  </div>
+  <div class="wrap">&copy; <span id="year"></span> Parth Prajapati</div>
 </footer>
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
-  const links = document.querySelectorAll('nav ul a');
-  const sections = [...links].map(l => document.querySelector(l.getAttribute('href')));
-  window.addEventListener('scroll', () => {
-    const y = window.scrollY + 80;
-    sections.forEach((sec, i) => {
-      if (sec && sec.offsetTop <= y && sec.offsetTop + sec.offsetHeight > y) {
-        links.forEach(l => l.style.color = '');
-        links[i].style.color = 'var(--text)';
-      }
-    });
-  });
 </script>
 
 </body>
